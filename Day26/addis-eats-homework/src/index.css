@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+}
+
+header {
+  text-align: center;
+  background: #222;
+  color: white;
+  padding: 35px 20px;
+}
+
+header h1 {
+  margin: 0 0 10px;
+}
+
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+main h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.menu {
+  display: grid;
+  gap: 20px;
+}
+
+.dish {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.dish h3 {
+  margin-top: 0;
+}
+
+.dish p {
+  line-height: 1.5;
+}
+
+.dish strong {
+  display: block;
+  margin-top: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: #222;
+  color: white;
+}
