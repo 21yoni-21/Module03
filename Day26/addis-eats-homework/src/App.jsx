@@ -1,6 +1,6 @@
 import Header from "./Header";
 import Dish from "./Dish";
-import Footer from "./Footer";
+import footer from "./footer";
 
 const menu = [
   {
@@ -55,7 +55,7 @@ function App() {
         </section>
       </main>
 
-      <Footer />
+      <footer />
     </>
   );
 }
