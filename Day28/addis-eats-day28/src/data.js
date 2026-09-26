@@ -4,41 +4,41 @@ export const dishes = [
     name: "Doro Wat",
     price: 240,
     category: "Main",
-    spicy: true,
+    spicy: true
   },
   {
     id: 2,
     name: "Shiro",
     price: 120,
-    category: "Vegan",
-    spicy: true,
+    category: "Main",
+    spicy: false
   },
   {
     id: 3,
     name: "Kitfo",
-    price: 320,
+    price: 350,
     category: "Main",
-    spicy: false,
+    spicy: true
   },
   {
     id: 4,
     name: "Tibs",
     price: 280,
-    category: "Grill",
-    spicy: true,
+    category: "Main",
+    spicy: true
   },
   {
     id: 5,
     name: "Firfir",
     price: 150,
-    category: "Main",
-    spicy: true,
+    category: "Breakfast",
+    spicy: true
   },
   {
     id: 6,
     name: "Beyaynetu",
     price: 200,
-    category: "Vegan",
-    spicy: false,
-  },
+    category: "Vegetarian",
+    spicy: false
+  }
 ];

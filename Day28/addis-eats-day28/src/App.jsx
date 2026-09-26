@@ -1,16 +1,18 @@
 import Menu from "./Menu";
 import OrderForm from "./OrderForm";
-import { dishes } from "./data";
+import "./App.css";
 
 function App() {
   return (
-    <>
-      <h1>🍽️ Addis Eats</h1>
+    <div className="app">
+      <h1>🍴 Addis Eats</h1>
 
-      <Menu dishes={dishes} />
+      <p>Explore Ethiopian dishes</p>
+
+      <Menu />
 
       <OrderForm />
-    </>
+    </div>
   );
 }
 

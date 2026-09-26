@@ -1,37 +1,59 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
+import { dishes } from "./data";
 import CategoryBar from "./CategoryBar";
-import DishList from "./DishList";
+import Dish from "./Dish";
 
-function Menu({ dishes }) {
+function Menu() {
   const [category, setCategory] = useState("All");
   const [total, setTotal] = useState(0);
 
-  const shown =
+  const shownDishes =
     category === "All"
       ? dishes
       : dishes.filter((dish) => dish.category === category);
 
   function addToOrder(price) {
-    setTotal(total + price);
+    setTotal((currentTotal) => currentTotal + price);
   }
 
   return (
-    <section>
-      <h2>Our Menu</h2>
+    <section className="menu-section">
+      <div className="menu-header">
+        <div>
+          <h2>{category} Dishes</h2>
+          <p>Choose your favorite Ethiopian dish.</p>
+        </div>
+
+        <div className="total">
+          Order Total: <strong>{total} ETB</strong>
+        </div>
+      </div>
 
       <CategoryBar
         selected={category}
         onSelect={setCategory}
       />
 
-      <DishList
-        dishes={shown}
-        onAdd={addToOrder}
-      />
-
-      <h2>Total: {total} ETB</h2>
+      {shownDishes.length === 0 ? (
+        <p>No {category} dishes found.</p>
+      ) : (
+        <div className="menu">
+          {shownDishes.map((dish) => (
+            <Dish
+              key={dish.id}
+              {...dish}
+              onAdd={addToOrder}
+            />
+          ))}
+        </div>
+      )}
     </section>
   );
 }
+
+Menu.propTypes = {
+  dishes: PropTypes.array
+};
 
 export default Menu;

@@ -1,35 +1,52 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
+import Card from "./Card";
 
-function Dish({ dish, onAdd }) {
+function Dish({
+  name,
+  price,
+  category,
+  spicy = false,
+  currency = "ETB",
+  onAdd
+}) {
   const [count, setCount] = useState(0);
 
   function handleAdd() {
-    setCount(count + 1);
-    onAdd(dish.price);
+    setCount((currentCount) => currentCount + 1);
+    onAdd(price);
   }
 
   return (
-    <div
-      style={{
-        border: "1px solid #ccc",
-        padding: "15px",
-        margin: "15px 0",
-        borderRadius: "8px",
-      }}
-    >
-      <h3>{dish.name}</h3>
+    <Card>
+      <h2>{name}</h2>
 
-      <p>{dish.price} ETB</p>
+      <p>
+        {price} {currency}
+      </p>
 
-      {dish.spicy && <p>🌶️ Spicy</p>}
+      <p>Category: {category}</p>
 
-      <button onClick={handleAdd}>
-        Add
-      </button>
+      {spicy && <span>🌶️ Spicy</span>}
 
-      <p>Quantity: {count}</p>
-    </div>
+      <div className="dish-actions">
+        <button onClick={handleAdd}>
+          Add
+        </button>
+
+        <span>Quantity: {count}</span>
+      </div>
+    </Card>
   );
 }
+
+Dish.propTypes = {
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  category: PropTypes.string.isRequired,
+  spicy: PropTypes.bool,
+  currency: PropTypes.string,
+  onAdd: PropTypes.func.isRequired
+};
 
 export default Dish;
