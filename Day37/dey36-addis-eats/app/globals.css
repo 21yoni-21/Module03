@@ -1,0 +1,507 @@
+/* =========================================
+   ADDIS EATS - GLOBAL STYLES
+   ========================================= */
+
+:root {
+  --primary: #b45309;
+  --primary-dark: #92400e;
+  --primary-light: #fef3c7;
+
+  --background: #fffaf3;
+  --surface: #ffffff;
+  --surface-soft: #fff7ed;
+
+  --text: #292524;
+  --text-light: #78716c;
+
+  --border: #e7e5e4;
+
+  --success: #15803d;
+  --danger: #dc2626;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.12);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  --max-width: 1200px;
+}
+
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--border);
+
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+}
+
+header > div {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+header h1 {
+  margin: 0;
+  padding-top: 18px;
+
+  color: var(--primary);
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 12px 0 18px;
+}
+
+header nav a {
+  padding: 9px 14px;
+
+  border-radius: var(--radius-sm);
+
+  color: var(--text-light);
+  font-size: 15px;
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+header nav a:hover {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+
+main {
+  width: min(100% - 40px, var(--max-width));
+  min-height: calc(100vh - 180px);
+  margin: 0 auto;
+  padding: 45px 0;
+}
+
+main > h1 {
+  margin-bottom: 10px;
+
+  color: var(--text);
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+main > p {
+  color: var(--text-light);
+  font-size: 17px;
+}
+
+/* =========================================
+   GENERAL HEADINGS
+   ========================================= */
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h2 {
+  color: var(--text);
+}
+
+/* =========================================
+   MENU LAYOUT
+   ========================================= */
+
+.menu-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 35px;
+
+  width: min(100% - 40px, var(--max-width));
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.menu-layout aside {
+  align-self: start;
+
+  width: 100%;
+  padding: 24px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.menu-layout aside h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+
+  color: var(--primary-dark);
+  font-size: 20px;
+}
+
+.menu-layout aside nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu-layout aside nav a {
+  padding: 11px 13px;
+
+  border-radius: var(--radius-sm);
+
+  color: var(--text-light);
+  font-weight: 600;
+
+  transition: all 0.2s ease;
+}
+
+.menu-layout aside nav a:hover {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  transform: translateX(3px);
+}
+
+.menu-layout section {
+  min-width: 0;
+}
+
+/* =========================================
+   CATEGORY BAR
+   ========================================= */
+
+.menu-layout section > main nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin: 25px 0;
+}
+
+.menu-layout section > main nav button {
+  padding: 10px 18px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  color: var(--text-light);
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.menu-layout section > main nav button:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================================
+   DISH LIST
+   ========================================= */
+
+.menu-layout section > main > div {
+  margin-top: 25px;
+}
+
+.menu-layout section article {
+  position: relative;
+
+  margin-bottom: 20px;
+  padding: 24px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.menu-layout section article:hover {
+  border-color: #f3c27a;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.menu-layout section article h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+
+  color: var(--primary-dark);
+  font-size: 23px;
+}
+
+.menu-layout section article p {
+  margin: 7px 0;
+  color: var(--text-light);
+}
+
+.menu-layout section article p:last-of-type {
+  margin-top: 14px;
+
+  color: var(--primary);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.menu-layout section article a {
+  display: inline-block;
+
+  margin-top: 12px;
+  padding: 9px 16px;
+
+  background: var(--primary);
+  border-radius: var(--radius-sm);
+
+  color: white;
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.menu-layout section article a:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   FILTER SHELL
+   ========================================= */
+
+.menu-layout section section {
+  margin-top: 25px;
+}
+
+.menu-layout section section > button {
+  margin-bottom: 20px;
+  padding: 10px 18px;
+
+  background: var(--text);
+  border: none;
+  border-radius: var(--radius-sm);
+
+  color: white;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.menu-layout section section > button:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   GENERAL BUTTONS
+   ========================================= */
+
+button {
+  cursor: pointer;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+  margin-top: 40px;
+  padding: 30px 20px;
+
+  background: #292524;
+  color: #d6d3d1;
+
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* =========================================
+   LOADING
+   ========================================= */
+
+.loading {
+  padding: 30px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  color: var(--text-light);
+}
+
+/* =========================================
+   ERROR
+   ========================================= */
+
+.error-page {
+  max-width: 600px;
+  margin: 80px auto;
+
+  padding: 40px;
+
+  background: var(--surface);
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-lg);
+
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.error-page h1 {
+  color: var(--danger);
+}
+
+.error-page button {
+  margin-top: 15px;
+  padding: 11px 20px;
+
+  background: var(--primary);
+  border: none;
+  border-radius: var(--radius-sm);
+
+  color: white;
+  font-weight: 700;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 800px) {
+  .menu-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-layout aside {
+    width: 100%;
+  }
+
+  .menu-layout aside nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  header h1 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  header nav {
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    width: min(100% - 24px, var(--max-width));
+    padding: 30px 0;
+  }
+
+  .menu-layout {
+    width: min(100% - 24px, var(--max-width));
+  }
+
+  header h1 {
+    font-size: 25px;
+  }
+
+  header nav a {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .menu-layout section article {
+    padding: 18px;
+  }
+}
