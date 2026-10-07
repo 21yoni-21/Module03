@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+  margin: 0 0 10px;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.menu-layout {
+  display: flex;
+  gap: 30px;
+}
+
+.menu-layout aside {
+  width: 200px;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.menu-layout aside nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-layout section {
+  flex: 1;
+}
